@@ -10,82 +10,45 @@ react-swipr is a react component, which is just a wrapper around swipr the minim
 
 ## Usage
 
-###html
+- <b>add some html</b>
 
 ```html
+<div id="container">
 
+</div>
+
+<!-- common js -->
+<script type="text/javascript" src="bundle.js"></script>
 ```
 
-###javascript
+- <b>now some javascript</b>
 
 ```javascript
+
 var React = require("react");
 var Swipr = require('react-swipr');
 
-var Slider = React.createClass({
+React.render( <Swipr>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+              </Swipr>
+            ,
+            document.getElementById("container")
+);
 
-  propTypes: {
-    products: React.PropTypes.array.isRequired
-  },
-
-  render: function() {
-
-    var rows = [];
-
-    var row = this.props.products.map(function (p, i) {
-
-        return (
-              <li>
-              <div style={style}>
-                <img key={i} src={p.image} alt="" />
-              </div>
-              </li>
-        );
-    }.bind(this));
-
-    return (
-      <div>
-          <Swipr>
-            <li>
-                {rows}
-            </li>
-          </Swipr>
-      </div>
-    );
-  }
-
+document.addEventListener('DOMContentLoaded', function () {
+    var simple = document.querySelector('.react-swipr');
+    swipr(simple);
 });
 
-module.exports = Slider;
 ```
 
-###css
+- <b>you need some minimal css for styling your slides</b>
 
-```css
-  /* Include some basic styles for your slides, here is a basic example */
-```
+[style.css](https://raw.githubusercontent.com/isekivacenz/react-swipr/master/example/styles.css)
+
 
 ## License
 
-(The MIT License)
-
-Copyright (c) 2015 isekivacenz &lt;stevenisekimartin@gmail.com&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-'Software'), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+[MIT](http://opensource.org/licenses/MIT)

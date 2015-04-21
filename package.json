@@ -3,9 +3,30 @@
   "version": "1.0.0",
   "description": "a react component for swipr the minimal touch swipe carousel",
   "main": "js/swipr.js",
-  "dependencies": {
-    "swipr": "~1.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isekivacenz/react-swipr"
   },
-  "author": "James Z, Steven Iseki",
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "swipr": "~1.0.3"
+  },
+  "keywords": [
+    "react-swipr",
+    "react swipr",
+    "react slider",
+    "react carousel",
+    "swiper",
+    "slider",
+    "touch-slider",
+    "touch enabled",
+    "carousel",
+    "minimal",
+    "simple slider",
+    "minimal slider"
+  ],
+  "author": "Steven Iseki James Z",
   "license": "MIT"
 }

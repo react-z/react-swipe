@@ -23,8 +23,6 @@ var ReactSwipr = React.createClass({
   },
   componentWillUnmount: function() {
   },  
-  slide: function (nextSlide) {
-  },
   render: function(){
 
     return (
