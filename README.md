@@ -20,11 +20,7 @@ react-swipr is a react component, which is just a wrapper around swipr the minim
 
 ```javascript
 var React = require("react");
-var Fluxxor = require("fluxxor");
-var FluxMixin = Fluxxor.FluxMixin(React);
-
 var Swipr = require('react-swipr');
-
 
 var Slider = React.createClass({
 
