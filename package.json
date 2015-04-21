@@ -5,7 +5,7 @@
   "main": "js/swipr.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/isekivacenz/react-swipr"
+    "url": "https://github.com/isekivacenz/react-swipr.git"
   },
   "peerDependencies": {
     "react": "*"
