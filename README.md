@@ -42,8 +42,8 @@ React.render( <Swipr elementId="product-swipr">
 ```
 
 - <b>remember to pass in a unique element id for each swipr, as you may want multiple swiprs on one page.</b>
-- e.g.`elementId="product-swipr"` 
-- react-swipr will initialize the swipr on component mount.
+e.g.`elementId="product-swipr"` 
+react-swipr will initialize the swipr on component mount.
 
 - <b>you need some minimal css for styling your slides</b>
 
