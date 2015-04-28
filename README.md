@@ -21,7 +21,7 @@ react-swipr is a react component, which is just a wrapper around swipr the minim
 <script type="text/javascript" src="bundle.js"></script>
 ```
 
-- <b>now some javascript to render the react-swipr component...</b>
+- <b>now some javascript to render the react-swipr component... react-swipr initializes the swipr on component mount</b> 
 
 ```javascript
 
@@ -43,7 +43,6 @@ React.render( <Swipr elementId="product-swipr">
 
 - <b>remember to pass in a unique element id for each swipr, as you may want multiple swiprs on one page.</b>
 e.g.`elementId="product-swipr"` 
-react-swipr will initialize the swipr on component mount.
 
 - <b>you need some minimal css for styling your slides</b>
 
