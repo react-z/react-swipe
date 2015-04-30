@@ -21,14 +21,18 @@ react-swipr is a react component, which is just a wrapper around swipr the minim
 <script type="text/javascript" src="bundle.js"></script>
 ```
 
-- <b>now some javascript</b>
+- <b>now some javascript to render the react-swipr component... </b>
+
+react-swipr initializes the swipr on component mount
 
 ```javascript
 
 var React = require("react");
 var Swipr = require('react-swipr');
 
-React.render( <Swipr>
+// if you added multiple to the page you would render each as below but with different ids.
+
+React.render( <Swipr elementId="product-swipr">
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
@@ -37,12 +41,11 @@ React.render( <Swipr>
             document.getElementById("container")
 );
 
-document.addEventListener('DOMContentLoaded', function () {
-    var simple = document.querySelector('.react-swipr');
-    swipr(simple);
-});
-
 ```
+
+- <b>remember to pass in a unique element id for each swipr, as you may want multiple swiprs on one page.</b>
+
+e.g.`elementId="product-swipr"` 
 
 - <b>you need some minimal css for styling your slides</b>
 
