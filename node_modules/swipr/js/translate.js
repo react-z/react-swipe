@@ -7,9 +7,6 @@
  */
 var translate = function (to, duration, ease, style) {
 
-    var domElements = require('./domElements')
-    var style = domElements.slideContainer.style;
-
     if (!style) {
         return;
     }

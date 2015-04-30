@@ -11,7 +11,7 @@
     "react": "*"
   },
   "dependencies": {
-    "swipr": "~1.0.3"
+    "swipr": "^1.0.9"
   },
   "keywords": [
     "react-swipr",

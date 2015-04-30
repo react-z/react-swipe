@@ -1,39 +1,21 @@
 'use strict';
 
-
 var swipr = function (slider, opts) {
 
-    var options = require('./options');
     var translate = require('./translate');
-    var slide = require('./slide');
+    var clamp = require('./clamp');
     var Hammer = require("hammerjs");
-    var position = require('./position');
-    var domElements = require('./domElements');
     var touchOffset;
     var delta;
     var isScrolling;
-
-    /* dom elements and position */
-    domElements.frame = slider.querySelector('.swipr');
-    domElements.slideContainer = domElements.frame.querySelector('.swipr_slides');
-    domElements.prevCtrl = slider.querySelector('.swipr_prev');
-    domElements.nextCtrl = slider.querySelector('.swipr_next');
-
-    position.x = domElements.slideContainer.offsetLeft;
-    position.y = domElements.slideContainer.offsetTop;
-
-    /* set up slides */
-    options.slides = Array.prototype.slice.call(domElements.slideContainer.children);
-
-    /* if object is jQuery convert to native DOM element */
-    if (typeof jQuery !== 'undefined' && slider instanceof jQuery) {
-        slider = slider[0];
-    }
 
     /**
      * onPanstart function: called when panning kicks off
      */    
     var onPanstart = function (event) {
+
+        config.domElements.slidesWidth = config.domElements.slideContainer.getBoundingClientRect().width || config.domElements.slideContainer.offsetWidth;
+        config.domElements.frameWidth = config.domElements.frame.getBoundingClientRect().width || config.domElements.frame.offsetWidth;
 
         touchOffset = {
             x: event.pointers[0].pageX,
@@ -44,6 +26,7 @@ var swipr = function (slider, opts) {
 
         delta = {};
 
+        /* on panning */
         mc.off("panmove");
         mc.on("panmove",function (event) {
 
@@ -59,34 +42,114 @@ var swipr = function (slider, opts) {
             }
 
             if (!isScrolling) {
-                translate(position.x + delta.x, 0, null);
+                translate(config.position.x + delta.x, 0, config.options.ease, config.domElements.slideContainer.style);
             }
         });
 
+        /* panning ends */
         mc.off("panend");
-        mc.on("panend",function() {
-            var direction = delta.x < 0;
-            slide(false, direction);
-        });
+        mc.on("panend",function (event) {
 
+            var direction = delta.x < 0;
+            var maxOffset   = (config.domElements.slidesWidth - config.domElements.frameWidth);
+            var limitOffset = clamp(maxOffset * -1, 0);
+            var limitIndex  = clamp(0, config.options.slides.length - 1);
+            var duration    = config.options.slideSpeed;
+
+            /* update the index */
+            if (direction) {
+                config.options.nextIndex = config.options.index + config.options.slidesToScroll;
+            } else {
+                config.options.nextIndex = config.options.index - config.options.slidesToScroll;
+            }
+            config.options.nextIndex = limitIndex(config.options.nextIndex);
+
+            var nextOffset = limitOffset(config.options.slides[config.options.nextIndex].offsetLeft * -1);
+
+            /* on rewind */
+            if (config.options.rewind && Math.abs(config.position.x) === maxOffset && direction) {
+                nextOffset = 0;
+                config.options.nextIndex  = 0;
+                duration = config.options.rewindSpeed;
+            }
+
+            /* translate to the nextOffset by a defined duration and ease function */
+            translate((nextOffset), duration, config.options.ease, config.domElements.slideContainer.style);
+
+            /* update the position with the next position */
+            config.position.x = nextOffset;
+
+            /* update the index with the nextIndex if offset of the nextIndex is in the range of the maxOffset */
+            if (config.options.slides[config.options.nextIndex].offsetLeft <= maxOffset) {
+                config.options.index = config.options.nextIndex;
+                config.options.nextIndex++;
+            }
+
+        });
     };
 
-    /* initialize hammerjs on the slider element */
-    var mc = new Hammer(domElements.slideContainer);    
-    mc.on("panstart", onPanstart);
+
+    /**
+     * config function: options stored for the swipr instance
+     */
+    var config = function (slider) {
+
+        this.domElements = {
+          frame: undefined,
+          slideContainer: undefined,
+          prevCtrl: undefined,
+          nextCtrl: undefined,
+          slidesWidth: undefined,
+          frameWidth: undefined
+        };
+
+        this.domElements.frame = slider.querySelector('.swipr');
+        this.domElements.slideContainer = this.domElements.frame.querySelector('.swipr_slides');
+        this.domElements.prevCtrl = slider.querySelector('.swipr_prev');
+        this.domElements.nextCtrl = slider.querySelector('.swipr_next');
+
+        this.position = {
+          x: undefined,
+          y: undefined
+        };
+
+        this.position.x = this.domElements.slideContainer.offsetLeft;
+        this.position.y = this.domElements.slideContainer.offsetTop;
+
+        this.options = {
+          slidesToScroll: 1,
+          slideSpeed: 300,
+          rewindSpeed: 600,
+          snapBackSpeed: 200,
+          ease: 'ease',
+          rewind: true,
+          index: 0,
+          nextIndex: 1,
+          slides: undefined
+        };
+
+        this.options.slides = Array.prototype.slice.call(this.domElements.slideContainer.children);
+    }
+
+    var config = new config(slider);
 
     /**
      * public
      * resetSlider function: called on resize
      */
     var resetSlider = function () {
-        domElements.slidesWidth = domElements.slideContainer.getBoundingClientRect().width || domElements.slideContainer.offsetWidth;
-        domElements.frameWidth  = domElements.frame.getBoundingClientRect().width || domElements.frame.offsetWidth;
-        options.index = 0;
-        translate(options.index, options.rewindSpeed, options.ease);
+
+        config.domElements.slidesWidth = config.domElements.slideContainer.getBoundingClientRect().width || config.domElements.slideContainer.offsetWidth;
+        config.domElements.frameWidth = config.domElements.frame.getBoundingClientRect().width || config.domElements.frame.offsetWidth;
+        config.options.index = 0;
     };
 
     resetSlider();
+
+    /* initialize hammerjs on the slider element */
+    var mc = new Hammer(config.domElements.slideContainer);    
+    mc.on("panstart", onPanstart);
+
 
     /**
      * onResize function: event for resize of page
@@ -101,19 +164,22 @@ var swipr = function (slider, opts) {
      * prev function: called on clickhandler
      */
     var prev = function () {
-        slide(false, false);
+        translate((nextOffset), duration, config.options.ease, config.domElements.slideContainer.style);
+        config.position.x = nextOffset;
     };
 
     /**
      * next function: called on clickhandler
      */     
     var next = function () {
-        slide(false, true);
+        translate((nextOffset), duration, config.options.ease, config.domElements.slideContainer.style);
+        config.position.x = nextOffset;
     };
 
-    if (domElements.prevCtrl && domElements.nextCtrl) {
-        domElements.prevCtrl.addEventListener('click', prev);
-        domElements.nextCtrl.addEventListener('click', next);
+    /* fire off click events for next / prev controls */
+    if (config.domElements.prevCtrl && config.domElements.nextCtrl) {
+        config.domElements.prevCtrl.addEventListener('click', prev);
+        config.domElements.nextCtrl.addEventListener('click', next);
     }
 
 

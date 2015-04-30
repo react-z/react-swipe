@@ -8,7 +8,7 @@
 
 /* make sure you have run npm install swipr
   then this line would be 
-   var swipr = require('./swipr') 
+   var swipr = require('swipr') 
 */
 var swipr = require('../js/main.js');
 
