@@ -18,23 +18,27 @@ var ReactSwipr = React.createClass({
 
   componentDidMount: function() {
 
-    var swipr = require('swipr');
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var elementId = this.props.elementId;
-        var element = document.getElementById(elementId);
-        if(element == null || element == undefined) {
-          return;
-        }
+    // seems to be ready at either DOM Load or window onload
 
-        // initialize the swiper on the element with the defined id
-        swipr(element);
+    var elementId = this.props.elementId;
+    var element = document.getElementById(elementId);
 
-    }.bind(this));
+    if(element == null || element == undefined) {
+      return;
+    } else {
+      this.swipe(element);
+    }
+
         
   },
-  componentWillUnmount: function() {
-  },  
+  swipe: function (element) {
+
+    // initialize the swiper on the element with the defined id
+    var swipr = require('swipr');
+    swipr(element);
+
+  },
   render: function(){
 
     return (
@@ -46,7 +50,6 @@ var ReactSwipr = React.createClass({
               this.props.children
             )
         )
-
       )
 
     );
