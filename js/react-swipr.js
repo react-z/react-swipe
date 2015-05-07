@@ -21,6 +21,19 @@ var ReactSwipr = React.createClass({
 
     // seems to be ready at either DOM Load or window onload
 
+    document.addEventListener('DOMContentLoaded', function () {
+        var elementId = this.props.elementId;
+        var element = document.getElementById(elementId);
+
+        if(element == null || element == undefined) {
+          return;
+        } else {
+          this.swipe(element);
+        }
+
+    }.bind(this));
+
+
     var elementId = this.props.elementId;
     var element = document.getElementById(elementId);
 
@@ -50,6 +63,7 @@ var ReactSwipr = React.createClass({
               this.props.children
             )
         )
+
       )
 
     );
