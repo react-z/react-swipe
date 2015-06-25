@@ -5,25 +5,29 @@
   "main": "js/react-swipr.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/isekivacenz/react-swipr.git"
+    "url": "https://github.com/StevenIseki/react-swipr.git"
   },
   "peerDependencies": {
     "react": "*"
   },
   "dependencies": {
-    "swipr": "^1.0.9"
+    "swipr": "^1.0.11"
   },
   "keywords": [
+    "react",
+    "react-component",
     "react-swipr",
     "react swiper",
     "react-swipe",
     "react-slide",
     "react-slider",
+    "react slide",
     "react slider",
     "react-carousel",
     "react carousel",
     "swiper",
     "slider",
+    "slide",
     "carousel",
     "touch-slider",
     "touch enabled",
