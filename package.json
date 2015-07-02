@@ -1,6 +1,6 @@
 {
   "name": "react-swipr",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "a react component for swipr the minimal touch swipe carousel",
   "main": "js/react-swipr.js",
   "repository": {
