@@ -57,25 +57,15 @@
 
 /* next / prev */
 
-.swipr_prev, .swipr_next {
-    position: absolute;
-    top: 50%;
-    margin-top: -25px;
-    display: block;
-    cursor: pointer;
-}
 
 .swipr_next {
-    right: 0;
+  top: 150px;
 }
 
 .swipr_prev {
-    left: 0;
+  top: 150px;
 }
 
-.swipr_next svg, .swipr_prev svg {
-    width: 25px;
-}
 
 @media screen and (min-width: 640px ) {
 
