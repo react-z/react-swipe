@@ -11,7 +11,7 @@
     "react": "*"
   },
   "dependencies": {
-    "swipr": "^1.0.12"
+    "swipr": "^2.0.0"
   },
   "keywords": [
     "react",
@@ -26,6 +26,7 @@
     "react-carousel",
     "react carousel",
     "swiper",
+    "swipe",
     "slider",
     "slide",
     "carousel",
