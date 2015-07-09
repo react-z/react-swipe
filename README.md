@@ -44,7 +44,7 @@ React.render( <Swipr elementId="product-swipr">
 
 - <b>you need some minimal css for styling your slides</b>
 
-[style.css](https://raw.githubusercontent.com/isekivacenz/react-swipr/master/example/styles.css)
+[style.css](https://github.com/StevenIseki/react-swipr/blob/master/example/styles.css)
 
 
 ## License
