@@ -1,8 +1,6 @@
 # react-swipr
 
-react-swipr is a react component, which is just a wrapper around swipr the minimal touch swipe carousel
-
-![](http://img1.wikia.nocookie.net/__cb20130426021828/villains/images/thumb/7/78/Swiper.jpg/500px-Swiper.jpg)
+react-swipr is a react component, which is just a wrapper around [swipr](https://github.com/StevenIseki/swipr) the minimal touch swipe carousel
 
 ## Installation
 
