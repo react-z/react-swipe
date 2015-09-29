@@ -33,7 +33,7 @@ var ReactSwipr = React.createClass({
 
     // initialize the swiper on the element with the defined id
     var swipr = require('swipr');
-    swipr(element);
+    swipr(element, this.props);
 
   },
   render: function(){
