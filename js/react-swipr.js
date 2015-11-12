@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var React = require('react');
 
 /**
@@ -33,8 +31,10 @@ var ReactSwipr = React.createClass({
 
     // initialize the swiper on the element with the defined id
     var swipr = require('swipr');
-    swipr(element, this.props);
-
+    this.swipr = swipr(element, this.props);
+  },
+  componentDidUpdate: function() {
+    this.swipr.setIndex(this.props.index);
   },
   render: function(){
 
