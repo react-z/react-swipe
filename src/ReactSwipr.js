@@ -25,6 +25,14 @@ export default class ReactSwipr extends Component {
     this.swipr = swipr(element, this.props);
   }
 
+  next = () => {
+    this.swipr.next();
+  }
+
+  prev = () => {
+    this.swipr.prev();
+  }
+
   render () {
     const { navigation, elementId } = this.props;
     return (
@@ -37,8 +45,18 @@ export default class ReactSwipr extends Component {
         {
           navigation &&
             <div className='nav'>
-              <span className='swipr_next'>next</span>
-              <span className='swipr_prev'>prev</span>
+              <span
+                className='swipr_next'
+                onClick={this.next}
+              >
+                next
+              </span>
+              <span
+                className='swipr_prev'
+                onClick={this.prev}
+              >
+                prev
+              </span>
             </div>
         }
       </div>
