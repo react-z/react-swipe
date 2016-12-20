@@ -210,9 +210,21 @@
 	  _inherits(ReactSwipr, _Component);
 
 	  function ReactSwipr() {
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
+
 	    _classCallCheck(this, ReactSwipr);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ReactSwipr).apply(this, arguments));
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(ReactSwipr)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.next = function () {
+	      _this.swipr.next();
+	    }, _this.prev = function () {
+	      _this.swipr.prev();
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(ReactSwipr, [{
@@ -245,7 +257,13 @@
 	      var navigation = _props.navigation;
 	      var elementId = _props.elementId;
 
-	      return _react2.default.createElement('div', { className: 'react-swipr', id: elementId }, _react2.default.createElement('div', { className: 'swipr' }, _react2.default.createElement('div', { className: 'swipr_slides' }, this.props.children)), navigation && _react2.default.createElement('div', { className: 'nav' }, _react2.default.createElement('span', { className: 'swipr_prev' }, 'next'), _react2.default.createElement('span', { className: 'swipr_prev' }, 'prev')));
+	      return _react2.default.createElement('div', { className: 'react-swipr', id: elementId }, _react2.default.createElement('div', { className: 'swipr' }, _react2.default.createElement('div', { className: 'swipr_slides' }, this.props.children)), navigation && _react2.default.createElement('div', { className: 'nav' }, _react2.default.createElement('span', {
+	        className: 'swipr_next',
+	        onClick: this.next
+	      }, 'next'), _react2.default.createElement('span', {
+	        className: 'swipr_prev',
+	        onClick: this.prev
+	      }, 'prev')));
 	    }
 	  }]);
 
