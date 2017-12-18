@@ -11,7 +11,7 @@
     "hammerjs": "~2.0.4"
   },
   "peerDependencies": {
-    "react": "^16.2.0"
+    "react": "^15.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -25,10 +25,9 @@
     "expect": "^1.20.1",
     "express": "^4.13.4",
     "jsdom": "^9.2.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
+    "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^15.1.0",
     "tape": "^4.5.1",
     "webpack": "^1.13.1"
   },

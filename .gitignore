@@ -1,12 +1,2 @@
-.idea
-.vscode/
-dist/
-html/
-node_modules/
-specification/
-*.iml
-.npmrc
-npm-debug.log
-old.*
-typings/
-jsconfig.json
+node_modules
+.DS_Store

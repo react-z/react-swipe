@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom'
+import React, { Component, PropTypes } from 'react'
 
 /**
  * React Swipr component
@@ -67,6 +66,6 @@ export default class ReactSwipr extends Component {
 }
 
 ReactSwipr.propTypes = {
-  elementId: PropTypes.string.isRequired,
-  navigation: PropTypes.bool
-};
+  elementId: React.PropTypes.string.isRequired,
+  navigation: React.PropTypes.bool
+}
