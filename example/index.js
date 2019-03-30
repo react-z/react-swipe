@@ -1,4 +1,4 @@
-import Swipe from '../src/Swipe' // 'react-z-swipe'
+import Swipe from '../lib/Swipe' // 'react-z-swipe'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
