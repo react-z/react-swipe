@@ -1,4 +1,4 @@
-import Swipr from '../src/ReactSwipr' // 'react-swipr'
+import Swipr from '../lib/ReactSwipr' // 'react-swipr'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
