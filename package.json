@@ -5,11 +5,11 @@
   "main": "lib/ReactSwipr.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/StevenIseki/react-swipr.git"
+    "url": "https://github.com/react-z/react-swipe.git"
   },
-  "author": "Steven Iseki",
+  "author": "svnm",
   "license": "MIT",
-  "homepage": "https://github.com/StevenIseki/react-modal-view.git",
+  "homepage": "https://github.com/react-z/react-swipe.git",
   "peerDependencies": {
     "react": "^16.0.0"
   },

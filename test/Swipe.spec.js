@@ -1,17 +1,17 @@
 import test from 'tape'
 import React from 'react'
 import { mount } from 'enzyme'
-import Swipr from '../src/ReactSwipr'
+import Swipe from '../src/Swipe'
 
-test('Swipr component', (t) => {
+test('Swipe component', (t) => {
   const wrapper = mount(
-    <Swipr elementId="react-swipr-1" navigation={false}>
+    <Swipe elementId="react-swipe-1" navigation={false}>
       <li>1</li><li>2</li>
-    </Swipr>
+    </Swipe>
   )
 
   t.pass(
-    expect(wrapper.props().elementId).toEqual('react-swipr-1')
+    expect(wrapper.props().elementId).toEqual('react-swipe-1')
   )
 
   t.pass(

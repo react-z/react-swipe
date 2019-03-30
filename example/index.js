@@ -1,4 +1,4 @@
-import Swipr from '../lib/ReactSwipr' // 'react-swipr'
+import Swipe from '../src/Swipe' // 'react-z-swipe'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
@@ -6,28 +6,28 @@ class TestComponent extends Component {
   render () {
     return (
       <div>
-        <Swipr elementId="react-swipr-1" navigation={true}>
+        <Swipe elementId="react-swipe-1" navigation={true}>
           <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/react.png' />
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/react.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/styled-components.png' />
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/styled-components.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/webpack.png' />
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/webpack.png' />
           </li>
-        </Swipr>
-        <Swipr elementId="react-swipr-2" navigation={false}>
+        </Swipe>
+        <Swipe elementId="react-swipe-2" navigation={false}>
           <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/react.png' />
-          </li>
-          <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/styled-components.png' />
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/react.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/StevenIseki/react-webpack-example/master/images/webpack.png' />
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/styled-components.png' />
           </li>
-        </Swipr>
+          <li>
+            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/webpack.png' />
+          </li>
+        </Swipe>
       </div>
     )
   }

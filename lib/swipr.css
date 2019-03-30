@@ -3,13 +3,13 @@ img {
   margin: 0 auto;
 }
 
-.swipr_example {
+.swipe_example {
   margin: 0 auto;
   border: 1px solid;
   width: 800px;
 }
 
-.swipr {
+.swipe {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -17,22 +17,22 @@ img {
   width: 800px;
 }
 
-.swipr li {
+.swipe li {
   position: relative;
   display: inline-block;
   pointer-events: none;
   width: 800px;
 }
 
-.swipr_slides {
+.swipe_slides {
   display: inline-block;
 }
 
-.swipr_prev, .swipr_next {
+.swipe_prev, .swipe_next {
   display: inline-block;
   cursor: pointer;
 }
 
-.swipr_next svg, .swipr_prev svg {
+.swipe_next svg, .swipe_prev svg {
   width: 25px;
 }
