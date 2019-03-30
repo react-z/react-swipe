@@ -1,0 +1,38 @@
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.swipr_example {
+  margin: 0 auto;
+  border: 1px solid;
+  width: 800px;
+}
+
+.swipr {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  width: 800px;
+}
+
+.swipr li {
+  position: relative;
+  display: inline-block;
+  pointer-events: none;
+  width: 800px;
+}
+
+.swipr_slides {
+  display: inline-block;
+}
+
+.swipr_prev, .swipr_next {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.swipr_next svg, .swipr_prev svg {
+  width: 25px;
+}
