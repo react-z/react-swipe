@@ -1,6 +1,6 @@
 ## react-swipe
 
-[![npm version](https://badge.fury.io/js/react-swipr.svg)](https://badge.fury.io/js/react-swipr)
+[![npm version](https://badge.fury.io/js/react-swipr.svg)](https://badge.fury.io/js/react-z-swipe)
 
 ![](https://raw.githubusercontent.com/react-z/react-swipe/master/example/screenshot.gif)
 
