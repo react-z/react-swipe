@@ -25,24 +25,24 @@ class TestComponent extends Component {
       <div>
         <Swipe elementId="react-swipe-1" navigation={true}>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/react.png' />
+            <img src='react.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/styled-components.png' />
+            <img src='styled-components.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/webpack.png' />
+            <img src='webpack.png' />
           </li>
         </Swipe>
         <Swipe elementId="react-swipe-2" navigation={false}>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/react.png' />
+            <img src='react.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/styled-components.png' />
+            <img src='styled-components.png' />
           </li>
           <li>
-            <img src='https://raw.githubusercontent.com/svnm/react-webpack-example/master/images/webpack.png' />
+            <img src='webpack.png' />
           </li>
         </Swipe>
       </div>
