@@ -58,11 +58,16 @@ ReactDOM.render(
 
 ## Development
     yarn
-    npm run dev
+    yarn run dev
+
+## Test
+    yarn run test
 
 ## Build
     yarn
-    npm run build
+    yarn run build
+
+## Publish
     npm login
     npm version patch
     git add -A
