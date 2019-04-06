@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Swipe renders correctly and matches snapshot 1`] = `
+<div
+  className="react-swipe"
+  id="react-swipe-1"
+>
+  <div
+    className="swipr"
+  >
+    <ul
+      className="swipr_slides"
+    >
+      <li>
+        <p>
+          swiping...
+        </p>
+      </li>
+      <li>
+        <p>
+          more swiping...
+        </p>
+      </li>
+      <li>
+        <p>
+          more more swiping...
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

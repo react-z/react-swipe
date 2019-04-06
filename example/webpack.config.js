@@ -21,6 +21,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ title: 'react infinite loader example', template: './example/index.html' })
+    new HtmlWebpackPlugin({ title: 'example', template: './example/index.html' })
   ],
 }
