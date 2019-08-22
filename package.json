@@ -41,7 +41,7 @@
   },
   "scripts": {
     "build": "babel src --out-dir lib",
-    "dev": "webpack-dev-server --mode=development --port 3001 --inline --hot --config example/webpack.config",
+    "dev": "webpack-dev-server --mode=development --port 3000 --inline --hot --config example/webpack.config",
     "test": "jest"
   },
   "jest": {
